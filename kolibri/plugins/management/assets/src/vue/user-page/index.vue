@@ -279,14 +279,19 @@
     max-width: 300px
     height: 35px
     float: left
-    position: relative
-    left: 10px
-    @media screen and (min-width: $portrait-breakpoint + 1)
-      font-size: 1em
+    margin-left: 10px
+  @media screen and (max-width: $portrait-breakpoint)
+    select, .toolbar, .searchbar, button
+      box-sizing: border-box
+      margin: 0
+
+    .toolbar
       width: 100%
-    @media screen and (max-width: $portrait-breakpoint)
+
+    .searchbar
       font-size: 0.8em
       width: 100%
       display: table-row
+      margin-top: 0.2em
 
 </style>
