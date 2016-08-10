@@ -92,5 +92,6 @@
       width: 100%
     label
       position: relative
+    cursor: pointer
 
 </style>

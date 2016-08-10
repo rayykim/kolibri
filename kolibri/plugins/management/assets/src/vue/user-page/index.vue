@@ -289,9 +289,9 @@
       width: 100%
 
     .searchbar
-      font-size: 0.8em
+      font-size: 1em
       width: 100%
       display: table-row
-      margin-top: 0.2em
+      margin-top: 0.5em
 
 </style>
