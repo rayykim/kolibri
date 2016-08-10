@@ -5,7 +5,9 @@
       <div class="modal-wrapper">
         <div class="modal-container">
           <div class="modal-header">
-            <a @click="closeModal" class="close-btn">X</a>
+            <button @click="closeModal" class="close-btn">X</button>
+<!--             <span aria-hidden="true">&times;</span>
+            <span class="visuallyhidden">Close</span> -->
             <slot name="header">
               Kolibri
             </slot>
@@ -81,7 +83,8 @@
 
   .modal-container
     background: #fff
-    width: 450px
+    width: 85%
+    height: auto
     border-radius: 4px
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.33)
     transition: all 0.3s ease
@@ -98,10 +101,9 @@
     padding-bottom: inherit
 
   .close-btn
-    // float: right
+    float: right
     cursor:pointer
-    position: relative
-    left: 380px
+    border-color: transparent
 
   .modal-enter, .modal-leave
     opacity: 0

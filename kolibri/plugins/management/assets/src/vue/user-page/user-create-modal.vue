@@ -3,7 +3,7 @@
   <div class="user-creation-modal">
     <modal btntext="Add New">
 
-      <h2 slot="header"><div class="header">Add New Account</div></h2>
+      <h2 slot="header">Add New Account</h2>
 
       <section slot="body">
         <div class="user-field">
@@ -28,7 +28,7 @@
       </section>
 
       <section slot="footer">
-        <button class="create-btn" type="button" @click="createNewUser">Create User</button>
+        <button class="create-btn" type="button" @click="createNewUser">Create Account</button>
       </section>
 
       <icon-button text="Add New" :primary="false" slot="openbtn">
@@ -84,6 +84,8 @@
 
 <style lang="stylus" scoped>
 
+  @require '~core-theme'
+
   $button-content-size = 1em
   .user-field
     padding-bottom: 5%
@@ -96,7 +98,14 @@
     select
       height: 40px
       width: 100%
-  .header
+  h2
     text-align: center
+  .create-btn
+    float: right
+    background-color: $core-action-normal
+    color: $core-bg-canvas
+    &:hover
+      border-color: transparent
+      color: $core-action-light
 
 </style>
