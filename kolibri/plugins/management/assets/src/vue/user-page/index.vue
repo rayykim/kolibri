@@ -15,16 +15,16 @@
         <option value="learner"> Learners </option>
       </select>
 
-    <div class="searchbar">
-        <svg class="search-button" src="../icons/search.svg"></svg>
-        <input
-        type="search"
-        v-model="searchFilter"
-        placeholder="Search for a user...">
-    </div>
-
       <div class="create">
         <user-create-modal></user-create-modal>
+      </div>
+
+      <div class="searchbar">
+          <svg class="search-button" src="../icons/search.svg"></svg>
+          <input
+          type="search"
+          v-model="searchFilter"
+          placeholder="Search for a user...">
       </div>
 
     </div>
