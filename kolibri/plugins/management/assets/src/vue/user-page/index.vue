@@ -190,7 +190,6 @@
     display: table
     clear: both
 
-
   // Toolbar Styling
   .create
     float: right
@@ -221,7 +220,6 @@
     width: 100%
     /*background-color: $core-bg-light*/
     /*padding-top:*/
-
 
     /*Prevent lists that are too long*/
     max-height: 300px

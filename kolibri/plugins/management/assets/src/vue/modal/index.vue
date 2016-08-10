@@ -66,6 +66,7 @@
 
   .modal
     position: fixed
+    z-index: 1
     top: 0
     left: 0
     width: 100%
@@ -97,8 +98,10 @@
     padding-bottom: inherit
 
   .close-btn
-    float: right
+    // float: right
     cursor:pointer
+    position: relative
+    left: 380px
 
   .modal-enter, .modal-leave
     opacity: 0
