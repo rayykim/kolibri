@@ -34,6 +34,7 @@
       <icon-button text="Add New" :primary="false" slot="openbtn">
         <svg class="add-user" src="../icons/add_new_user.svg"></svg>
       </icon-button>
+
     </modal>
   </div>
 

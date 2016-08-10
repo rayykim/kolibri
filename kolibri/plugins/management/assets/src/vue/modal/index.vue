@@ -5,7 +5,7 @@
       <div class="modal-wrapper">
         <div class="modal-container">
           <div class="modal-header">
-            <button @click="closeModal" class="close-btn">X</button>
+              <button @click="closeModal" class="close-btn">X</button>
 <!--             <span aria-hidden="true">&times;</span>
             <span class="visuallyhidden">Close</span> -->
             <slot name="header">
@@ -102,7 +102,7 @@
 
   .close-btn
     float: right
-    cursor:pointer
+    cursor: pointer
     border-color: transparent
 
   .modal-enter, .modal-leave
