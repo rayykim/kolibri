@@ -23,7 +23,15 @@
         </div>
 
         <div class="user-field">
-          <select v-model="user.role">
+          <label for="confirmpassword">Confirm Password</label>
+          <input type="password" class="add-form" id="confirmpassword" required v-model="user.confirm_password" debounce="500">
+        </div>
+
+        <div>{{ checkPassword }}</div>
+
+        <div class="user-field">
+          <label for="user-role"><span class="visuallyhidden">User Role</span></label>
+          <select v-model="user.role" id="user-role">
             <option value="learner" selected> Learner </option>
             <option value="admin"> Admin </option>
           </select>
@@ -57,23 +65,37 @@
       return {
         user: {
           username: '',
-          password: '',
           full_name: '',
+          password: '',
+          confirm_password: '',
         },
         role: 'learner',
       };
     },
+    computed: {
+      checkPassword() {
+        // if (this.user.password.length =< 9) {
+        //   return 'Error: too short';
+        // }
+        if (this.user.confirm_password && this.user.password !== this.user.confirm_password) {
+          return 'passwords not matched';
+        }
+        return '';
+      },
+    },
     methods: {
       createNewUser() {
-        this.user.facility = this.facility;
-        // using promise to ensure that the user is created before closing
-        // can use this promise to have flash an error in the modal?
-        this.createUser(this.user, this.role).then(() => {
-          for (const userProp of Object.getOwnPropertyNames(this.user)) {
-            this.user[userProp] = '';
-          }
-          this.$refs.modal.closeModal();
-        });
+        if (this.user.password && this.user.confirm_password === this.user.password) {
+          this.user.facility = this.facility;
+          // using promise to ensure that the user is created before closing
+          // can use this promise to have flash an error in the modal?
+          this.createUser(this.user, this.role).then(() => {
+            for (const userProp of Object.getOwnPropertyNames(this.user)) {
+              this.user[userProp] = '';
+            }
+            this.$refs.modal.closeModal();
+          });
+        }
       },
     },
     vuex: {
@@ -98,6 +120,34 @@
     input, select
       width: 100%
     label
-      position: relative
+      // position: relative
+      cursor: pointer
+    select
+      -webkit-appearance: menulist-button
+      width: 100%
+      height: 40px
+      font-weight: bold
+      background-color: transparent
+  .add-form
+    width: 300px
+    margin: 0 auto
+    display: block
+    padding: 5px 10px
+    letter-spacing: 0.08em
+    border: none
+    border-bottom: 1px solid $core-text-default
+    height: 30px
+    &:focus
+      outline: none
+      border-bottom: 3px solid $core-action-normal
+  .header
+    text-align: center
+  .create-btn
+    float: right
+    background-color: $core-action-normal
+    color: $core-bg-canvas
+    &:hover
+      border-color: transparent
+      color: $core-action-light
 
 </style>
